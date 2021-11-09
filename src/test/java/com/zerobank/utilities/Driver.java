@@ -9,6 +9,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
@@ -25,8 +27,16 @@ public class Driver {
             String browser = ConfigurationReader.get("browser");
             switch (browser) {
                 case "chrome":
+                    DesiredCapabilities desiredCap = DesiredCapabilities.chrome();
+                    desiredCap.acceptInsecureCerts();
+                    desiredCap.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+                    desiredCap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+
+                    ChromeOptions cOption = new ChromeOptions();
+                    cOption.merge(desiredCap);
+
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    driver = new ChromeDriver(cOption);
                     break;
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
