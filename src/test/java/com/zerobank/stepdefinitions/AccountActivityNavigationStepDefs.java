@@ -1,13 +1,25 @@
 package com.zerobank.stepdefinitions;
 
+import com.zerobank.pages.BasePage;
+import com.zerobank.pages.LoginPage;
+import com.zerobank.utilities.ConfigurationReader;
+import com.zerobank.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.Keys;
 
 public class AccountActivityNavigationStepDefs {
     @Given("the user is logged in")
-    public void the_user_is_logged_in() {
+    public void the_user_is_logged_in() throws InterruptedException {
+        String url = ConfigurationReader.get("url");
+        Driver.get().get(url);
+        BasePage basePage = new LoginPage();
+        basePage.signin.click();
 
+        ((LoginPage)basePage).username.sendKeys(ConfigurationReader.get("username"));
+        ((LoginPage)basePage).password.sendKeys(ConfigurationReader.get("password"));
+        ((LoginPage)basePage).submitBase.click();
 
     }
 

@@ -10,4 +10,7 @@ public class LoginPage extends BasePage {
 
     @FindBy(css = "input#user_password")
     public WebElement password ;
+
+    @FindBy(css = ".btn.btn-primary")
+    public WebElement submitBase ;
 }
