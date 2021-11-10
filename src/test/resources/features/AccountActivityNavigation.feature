@@ -1,5 +1,5 @@
+
 Feature: Navigating to specific accounts in Accounts Activity
-  @wip
   Scenario Outline: <accountType> account redirect
     Given the user is logged in
     When the user clicks on "<accountType>" link on the Account Summary page
@@ -9,6 +9,6 @@ Feature: Navigating to specific accounts in Accounts Activity
       | accountType |
       | Savings     |
       | Brokerage   |
-      | Checking    |
-      | Credit Card |
-      | Loan        |
+   #   | Checking    |
+   #   | Credit Card |
+   #   | Loan        |
