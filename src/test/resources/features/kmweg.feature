@@ -8,3 +8,4 @@ Feature: Kmweg home page automation
     Scenario: dsfdf
       Given test and try
       Then test day "18.01.2023"
+    #merhaba dünya
