@@ -14,7 +14,7 @@ import org.junit.Assert;
 public class AccountActivityNavigationStepDefs {
     @Given("the user is logged in")
     public void the_user_is_logged_in() throws InterruptedException {
-        String url = ConfigurationReader.get("url");
+        String url = ConfigurationReader.get("url2");
         Driver.get().get(url);
         //Polymorphism implemented
         BasePage basePage = new LoginPage();
@@ -23,6 +23,7 @@ public class AccountActivityNavigationStepDefs {
         ((LoginPage)basePage).username.sendKeys(ConfigurationReader.get("username"));
         ((LoginPage)basePage).password.sendKeys(ConfigurationReader.get("password"));
         ((LoginPage)basePage).submitBase.click();
+
 
 
     }

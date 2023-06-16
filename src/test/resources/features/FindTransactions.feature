@@ -1,5 +1,5 @@
 Feature: Find Transactions in Account Activity
-  @wip
+
   Scenario:	Search date range
     Given the user is logged in
     Then the user accesses the Find Transactions tab
