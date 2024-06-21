@@ -1,4 +1,4 @@
-package com.zerobank.utilities;
+package com.omni.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

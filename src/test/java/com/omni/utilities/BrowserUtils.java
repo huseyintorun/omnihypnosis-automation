@@ -1,4 +1,4 @@
-package com.zerobank.utilities;
+package com.omni.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;

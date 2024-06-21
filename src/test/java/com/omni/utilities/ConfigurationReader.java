@@ -1,4 +1,4 @@
-package com.zerobank.utilities;
+package com.omni.utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;
