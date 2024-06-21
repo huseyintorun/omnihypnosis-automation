@@ -11,8 +11,7 @@ public class OmniLanding extends BasePage{
 
     @FindBy(xpath = "//a[@href='https://www.omnihypnosis.com/pages/omni-finder']")
     public WebElement omniFinder ;
-
-    @FindBy(css=("button[data-testid='uc-accept-all-button']"))
-    public WebElement acceptall ;
+    @FindBy(xpath = "//button[@data-testid='uc-accept-all-button']")
+    public WebElement acceptAllButton;
 
 }

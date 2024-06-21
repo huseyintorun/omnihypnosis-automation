@@ -6,6 +6,7 @@ import com.omni.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.Alert;
 
 public class OmnistartStepDefs {
 
@@ -14,10 +15,18 @@ public class OmnistartStepDefs {
     public void the_user_on_main_page() throws InterruptedException {
         String url = ConfigurationReader.get("url");
         Driver.get().get(url);
-       Thread.sleep(10000);
+       Thread.sleep(5000);
 
-       omniLanding.acceptall.click();
 
+    }
+    @When("the user clicks on euRecht accepted")
+    public void theUserClicksOnEuRechtAccepted() throws InterruptedException {
+   // Alert alert = Driver.get().switchTo().alert();
+    //alert.accept();
+        omniLanding.acceptAllButton.click();
+
+
+        Thread.sleep(5000);
     }
 
     @When("the user click on Ausbildung")
@@ -52,10 +61,7 @@ public class OmnistartStepDefs {
         Thread.sleep(10000);
 
     }
-    @When("the user clicks on euRecht accepted")
-    public void theUserClicksOnEuRechtAccepted() {
-        omniLanding.acceptall.click();
-    }
+
 
     @Then("The user on OMNIfinder")
     public void the_user_on_OMNIfinder() {
