@@ -1,20 +1,11 @@
 package com.omni.stepdefinitions;
 
-import com.omni.pages.LoginPage;
 import com.omni.pages.OmniLanding;
 import com.omni.utilities.ConfigurationReader;
 import com.omni.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Instant;
 
 public class OmnistartStepDefs {
 
@@ -25,7 +16,7 @@ public class OmnistartStepDefs {
         Driver.get().get(url);
        Thread.sleep(10000);
 
-       // omniLanding.acceptall.click();
+       omniLanding.acceptall.click();
 
     }
 
