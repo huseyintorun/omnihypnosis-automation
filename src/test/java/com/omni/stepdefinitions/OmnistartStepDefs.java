@@ -1,20 +1,34 @@
 package com.omni.stepdefinitions;
 
+import com.omni.pages.LoginPage;
 import com.omni.pages.OmniLanding;
 import com.omni.utilities.ConfigurationReader;
 import com.omni.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Instant;
 
 public class OmnistartStepDefs {
 
     OmniLanding omniLanding = new OmniLanding();
     @Given("the user on main page")
-    public void the_user_on_main_page() {
+    public void the_user_on_main_page() throws InterruptedException {
         String url = ConfigurationReader.get("url");
         Driver.get().get(url);
+       Thread.sleep(10000);
+
+       // omniLanding.acceptall.click();
+
     }
+
     @When("the user click on Ausbildung")
     public void the_user_click_on_Ausbildung() {
         // Write code here that turns the phrase above into concrete actions
@@ -40,9 +54,16 @@ public class OmnistartStepDefs {
     }
 
     @When("the user click on OMNIfinder")
-    public void the_user_click_on_OMNIfinder() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void the_user_click_on_OMNIfinder() throws InterruptedException {
+
+        omniLanding.omniFinder.click();
+        // 20 saniye (20000 milisaniye) uyku
+        Thread.sleep(10000);
+
+    }
+    @When("the user clicks on euRecht accepted")
+    public void theUserClicksOnEuRechtAccepted() {
+        omniLanding.acceptall.click();
     }
 
     @Then("The user on OMNIfinder")
@@ -105,5 +126,7 @@ public class OmnistartStepDefs {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
+
 
 }

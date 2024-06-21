@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public abstract class BasePage {
     public WebDriverWait wait ;
 
+
     public BasePage (){
         PageFactory.initElements(Driver.get(),this);
     }
