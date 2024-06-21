@@ -53,7 +53,7 @@ This work-in-progress (WIP) scenario includes steps to check the availability an
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/omni-hypnose.git
+   git clone https://github.com/huseyintorun/omnihypnosis-automation.git
 Navigate to the project directory:
 sh
 Kodu kopyala
