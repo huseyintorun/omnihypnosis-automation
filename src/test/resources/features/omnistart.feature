@@ -2,7 +2,7 @@ Feature: Omni Hypnose All Click On Links
 
   Scenario:	Check the availability of Overhead Menu Elements
     Given the user on main page
-    When the user clicks on euRecht accepted
+    When the user click on OMNIfinder accepted
 
   #Scenario Outline:	Check the availability of Overhead Menu Elements
    # Given the user on main page

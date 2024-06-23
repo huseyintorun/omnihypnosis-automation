@@ -19,14 +19,18 @@ public class OmnistartStepDefs {
 
 
     }
+    @When("the user click on OMNIfinder accepted")
+    public void theUserClickOnOMNIfinderAccepted() throws InterruptedException {
+        omniLanding.omni_Finder.click();
+        Thread.sleep(5000);
+    }
+
     @When("the user clicks on euRecht accepted")
     public void theUserClicksOnEuRechtAccepted() throws InterruptedException {
    // Alert alert = Driver.get().switchTo().alert();
     //alert.accept();
-        omniLanding.acceptAllButton.click();
-
-
-        Thread.sleep(5000);
+      omniLanding.modul1.click();
+      Thread.sleep(5000);
     }
 
     @When("the user click on Ausbildung")
