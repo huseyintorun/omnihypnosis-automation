@@ -16,6 +16,14 @@ public class OmniLanding extends BasePage{
     @FindBy(css = "a[href='https://www.omnihypnosis.com/pages/omni-finder']")
     public WebElement omni_Finder;
 
+    @FindBy(css = "a[href='/pages/about-omni']")
+    public WebElement about_Omni;
+    @FindBy(css = "label[for='language-toggle']")
+    public WebElement language_Toggle;
+
+
+
+
 
 
 }

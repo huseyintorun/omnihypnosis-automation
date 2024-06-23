@@ -3,6 +3,7 @@ package com.omni.stepdefinitions;
 import com.omni.pages.OmniLanding;
 import com.omni.utilities.ConfigurationReader;
 import com.omni.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,10 +19,18 @@ public class OmnistartStepDefs {
        Thread.sleep(5000);
 
 
+
+
     }
     @When("the user click on OMNIfinder accepted")
     public void theUserClickOnOMNIfinderAccepted() throws InterruptedException {
         omniLanding.omni_Finder.click();
+        Thread.sleep(5000);
+    }
+
+    @And("the user click on AboutOMNI button")
+    public void theUserClickOnAboutOMNIButton() throws InterruptedException {
+        omniLanding.about_Omni.click();
         Thread.sleep(5000);
     }
 
@@ -31,6 +40,12 @@ public class OmnistartStepDefs {
     //alert.accept();
       omniLanding.modul1.click();
       Thread.sleep(5000);
+    }
+
+    @And("the user click on OMNI Language toggle to choose german")
+    public void theUserClickOnOMNILanguageToggleToChooseGerman() throws InterruptedException {
+        omniLanding.language_Toggle.click();
+        Thread.sleep(5000);
     }
 
     @When("the user click on Ausbildung")
