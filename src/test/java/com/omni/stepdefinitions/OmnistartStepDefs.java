@@ -184,13 +184,13 @@ public class OmnistartStepDefs {
         Thread.sleep(1000);
 
         // Dropdown (select) elemanını bulun ve seçimi yapın
-        Select country = new Select(Driver.get().findElement(By.name("country")));
-        country.selectByVisibleText("Germany");
-        Thread.sleep(1000);
+        //Select country = new Select(Driver.get().findElement(By.name("country")));
+        //country.selectByVisibleText("Germany");
+        //Thread.sleep(1000);
 
-        WebElement termsConditions = Driver.get().findElement(By.name("termsConditions"));
-        termsConditions.click();
-        Thread.sleep(1000);
+        //WebElement termsConditions = Driver.get().findElement(By.name("termsConditions"));
+        //termsConditions.click();
+        //Thread.sleep(1000);
 
         WebElement address1 = Driver.get().findElement(By.name("address1"));
         address1.sendKeys("123 Main St");
@@ -199,6 +199,8 @@ public class OmnistartStepDefs {
         WebElement postalCode = Driver.get().findElement(By.name("postalCode"));
         postalCode.sendKeys("12345");
         Thread.sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) Driver.get();
+        js.executeScript("window.scrollBy(0, 50);");  // 100 piksel aşağı kaydırır
 
         WebElement city = Driver.get().findElement(By.name("city"));
         city.sendKeys("Berlin");
@@ -207,6 +209,8 @@ public class OmnistartStepDefs {
         WebElement vatNumber = Driver.get().findElement(By.name("vatNumber"));
         vatNumber.sendKeys("DE123456789");
         Thread.sleep(1000);
+        JavascriptExecutor js3 = (JavascriptExecutor) Driver.get();
+        js3.executeScript("window.scrollBy(0, 50);");  // 100 piksel aşağı kaydırır
 
         WebElement businessName = Driver.get().findElement(By.name("businessName"));
         businessName.sendKeys("Doe Enterprises");
