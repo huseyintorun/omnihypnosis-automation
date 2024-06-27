@@ -8,6 +8,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 
 public class OmnistartStepDefs {
 
@@ -22,10 +24,20 @@ public class OmnistartStepDefs {
 
 
     }
+
     @When("the user click on OMNIfinder accepted")
     public void theUserClickOnOMNIfinderAccepted() throws InterruptedException {
-        omniLanding.omni_Finder.click();
-        Thread.sleep(5000);
+        Actions actions = new Actions(Driver.get());
+        // Perform tab key presses
+        for (int i = 0; i < 7; i++) {
+            actions.sendKeys(Keys.TAB).build().perform();
+            Thread.sleep(100);
+        }
+
+        // Press Enter key
+        actions.sendKeys(Keys.ENTER).build().perform();
+
+        Thread.sleep(2000);
     }
 
     @And("the user click on AboutOMNI button")
