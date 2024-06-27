@@ -11,8 +11,7 @@ public class OmniLanding extends BasePage{
 
     @FindBy(xpath = "//a[@href='https://www.omnihypnosis.com/pages/omni-finder']")
     public WebElement omniFinder ;
-    @FindBy(xpath = "//img[@src='https://import.cdn.thinkific.com/875575%2Fcustom_site_themes%2Fid%2FJai90SekR3mzJcZqhJuz_Modul%201-%20OMNI%20Hypnotiseur.jpg'] [1]")
-    public WebElement modul1;
+
     @FindBy(css = "a[href='https://www.omnihypnosis.com/pages/omni-finder']")
     public WebElement omni_Finder;
 
@@ -20,6 +19,13 @@ public class OmniLanding extends BasePage{
     public WebElement about_Omni;
     @FindBy(css = "label[for='language-toggle']")
     public WebElement language_Toggle;
+
+    @FindBy(xpath = "//a[normalize-space()='BEGINNE NOCH HEUTE']")
+    public WebElement modul1;
+
+    @FindBy(xpath = "//a[normalize-space()='Jetzt Platz in der Schweiz sichern!']")
+    public WebElement modul2;
+
 
 
 

@@ -1,24 +1,23 @@
 Feature: Omni Hypnose All Click On Links
 
-  Scenario:	Check the availability of Overhead Menu Elements
-    Given the user on main page
-    When the user click on OMNIfinder accepted
-    And the user click on AboutOMNI button
-    And the user click on OMNI Language toggle to choose german
-
-  #Scenario Outline:	Check the availability of Overhead Menu Elements
-   # Given the user on main page
-   # When the user click on <Overhead Menu>
-   # Then The user on <Overhead Menu>
-   # Examples:
-    #  | Overhead Menu    |
-     # | Ausbildung       |
-     # | Weiterbildung    |
-     # | OMNIfinder       |
-     # | Uber OMNI        |
-    #  | Sign In          |
- # @wip
  # Scenario:	Check the availability of Overhead Menu Elements
+   # Given the user on main page
+   # When the user click on OMNIfinder accepted
+    #And the user click on AboutOMNI button
+    #And the user click on OMNI Language toggle to choose german
+
+@wip
+  Scenario: Check the availability of Overhead Menu Elements
+    Given the user on main page
+    And the user click on OMNIfinder accepted
+    And the user click on OMNI Language toggle to choose german
+    And the user clicks on BEGINNE NOCH HEUTE starten
+    When the user clicks on Jetzt Platz in der Schweiz sichern
+    And the user fills the form
+    #And the user clicks on Debit- or Kreditkarte
+    #Then the user checks PayPal
+
+   # Scenario:	Check the availability of Overhead Menu Elements
   #  Given the user on main page
   #  When the user click on OMNI Hypnotisor_Modul1
   #  And the user click on jetzt Onlineausbildung starten
@@ -47,10 +46,3 @@ Feature: Omni Hypnose All Click On Links
    #   | Sign In        |
 
   #@wip
-  #Scenario: Check the availability of Overhead Menu Elements
-    #Given the user is on the main page
-    #When the user clicks on the OMNI Hypnotisor Modul1
-    #And the user clicks on Jetzt Onlineausbildung starten
-    #And the user fills the form
-    #And the user clicks on Debit- or Kreditkarte
-    #Then the user checks PayPal
