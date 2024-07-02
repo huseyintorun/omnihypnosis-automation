@@ -14,6 +14,11 @@ Feature: Omni Hypnose All Click On Links
     And the user clicks on BEGINNE NOCH HEUTE starten
     When the user clicks on Jetzt Platz in der Schweiz sichern
     And the user fills the form
+    And the user click on apply coupon button
+    And the user enter the coupon in the place holder
+    And the user click on apply
+   #Then the user check the total amounth zero
+   Then the user click on complete order
     #And the user clicks on Debit- or Kreditkarte
     #Then the user checks PayPal
 

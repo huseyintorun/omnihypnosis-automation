@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -98,9 +99,9 @@ public class OmnistartStepDefs {
         //country.selectByVisibleText("Germany");
         //Thread.sleep(1000);
 
-        //WebElement termsConditions = Driver.get().findElement(By.name("termsConditions"));
-        //termsConditions.click();
-        //Thread.sleep(1000);
+        WebElement termsConditions = Driver.get().findElement(By.cssSelector("input[class='terms css-u2k63x']"));
+        termsConditions.click();
+        Thread.sleep(1000);
 
         WebElement address1 = Driver.get().findElement(By.name("address1"));
         address1.sendKeys("123 Main St");
@@ -130,5 +131,47 @@ public class OmnistartStepDefs {
         phoneNumber.sendKeys("+491234567890");
         Thread.sleep(1000);
     }
- 
+
+    @And("the user click on apply coupon button")
+    public void theUserClickOnApplyCouponButton() throws InterruptedException {
+
+        omniLanding.applyCoupon.click();
+        Thread.sleep(4000);
+    }
+
+    @And("the user enter the coupon in the place holder")
+    public void theUserEnterTheCouponInThePlaceHolder() {
+
+        omniLanding.inputCoupon.sendKeys("omni120free");
+    }
+
+    @And("the user click on apply")
+    public void theUserClickOnApply() {
+        omniLanding.clickApplyCoupon.click();
+    }
+
+    @Then("the user check the total amounth zero")
+    public void theUserCheckTheTotalAmounthZero() {
+        String expectedResult= "0";
+        String actualResult = omniLanding.totalAmounth.getText();
+        Assert.assertEquals(expectedResult,actualResult);
+
+    }
+
+    @Then("the user click on complete order")
+    public void theUserClickOnCompleteOrder() throws InterruptedException {
+        Thread.sleep(5000);
+        Actions actions = new Actions(Driver.get());
+        // Perform tab key presses
+        for (int i = 0; i < 13; i++) {
+            actions.sendKeys(Keys.TAB).build().perform();
+            Thread.sleep(100);
+        }
+
+        // Press Enter key
+        actions.sendKeys(Keys.ENTER).build().perform();
+
+        Thread.sleep(28000);
+
+    }
 }

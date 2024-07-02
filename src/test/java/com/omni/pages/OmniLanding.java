@@ -26,6 +26,37 @@ public class OmniLanding extends BasePage{
     @FindBy(xpath = "//a[normalize-space()='Jetzt Platz in der Schweiz sichern!']")
     public WebElement modul2;
 
+    @FindBy(css = "a[class = 'css-1evxrgn']")
+    public WebElement applyCoupon;
+
+    @FindBy(css = "input[name='coupon']")
+    public WebElement inputCoupon;
+
+    @FindBy(css = "button[class='css-1gz0dur']")
+    public WebElement clickApplyCoupon;
+
+    @FindBy(xpath = "(//span[@class='css-dc3ov7'])[2]")
+    public WebElement totalAmounth;
+
+    @FindBy(css = "input[class='terms css-u2k63x']")
+    public WebElement clickInput;
+
+    @FindBy(css = "button[class='css-1d94e3n']")
+    public WebElement completeOrder;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
