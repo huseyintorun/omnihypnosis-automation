@@ -4,7 +4,7 @@ Feature: Omni Hypnose All Click On Links
     Given the user on main page
     When the user click on OMNIfinder accepted
     And the user click on AboutOMNI button
-    And the user click on OMNI Language toggle to choose german
+    Then the user click on OMNI Language toggle to choose german
 
 @wip
   Scenario: Check the availability of Overhead Menu Elements
