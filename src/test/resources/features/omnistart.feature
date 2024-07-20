@@ -18,3 +18,5 @@ Feature: Omni Hypnose All Click On Links
     And the user enter the coupon in the place holder
     And the user click on apply
    Then the user click on complete order
+  @Smoke
+  @Regression
