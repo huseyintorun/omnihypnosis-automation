@@ -19,4 +19,5 @@ Feature: Omni Hypnose All Click On Links
     And the user click on apply
    Then the user click on complete order
   @Smoke
+
   @Regression
