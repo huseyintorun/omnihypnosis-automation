@@ -1,9 +1,7 @@
 package com.omni.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class OmniLanding extends BasePage{
@@ -43,6 +41,21 @@ public class OmniLanding extends BasePage{
 
     @FindBy(css = "button[class='css-1d94e3n']")
     public WebElement completeOrder;
+
+    @FindBy(xpath = "(//a[@class=\"custom-link\"])[1]")
+    public WebElement HypnoseAusbildung;
+
+    @FindBy(xpath = "//a[text()=\"Deutschland\"]")
+    public WebElement Deuschland_hover_over;
+
+    @FindBy(xpath = "(//a[text()=\"USA\"])[1]")
+    public WebElement USA_hover_over;
+
+    @FindBy(xpath = "//a[text()=('Jetzt Platz in Deutschland sichern!')]")
+    public WebElement Jetzt_platz_sichern_deutschland;
+
+    @FindBy(xpath = "//a[text()=('Secure your spot in the US')]")
+    public WebElement Secure_your_spot_in_the_US;
 
 
 

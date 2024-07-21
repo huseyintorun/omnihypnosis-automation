@@ -150,7 +150,7 @@ public class OmnistartStepDefs {
     @And("the user enter the coupon in the place holder")
     public void theUserEnterTheCouponInThePlaceHolder() {
 
-        omniLanding.inputCoupon.sendKeys("omni120free");
+        omniLanding.inputCoupon.sendKeys(ConfigurationReader.get("coupon"));
     }
 
     @And("the user click on apply")
@@ -246,4 +246,41 @@ public class OmnistartStepDefs {
             }
         }
     }
+
+    @And("the User choose Deutchland from Hover Over Menu")
+    public void theUserChooseDeutchlandFromHoverOverMenu() throws InterruptedException {
+        Actions actions = new Actions(Driver.get());
+        actions.moveToElement(omniLanding.HypnoseAusbildung).perform();
+        Thread.sleep(1000);
+        omniLanding.Deuschland_hover_over.click();
+        Thread.sleep(1000);
     }
+
+    @And("the user clicks on Jetzt Platz in Deutschland sichern")
+    public void theUserClicksOnJetztPlatzInDeutschlandSichern() throws InterruptedException {
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.get();
+        js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
+        Thread.sleep(2000);
+        omniLanding.Jetzt_platz_sichern_deutschland.click();
+        Thread.sleep(2000);
+    }
+
+    @And("the User choose US from Hover Over Menu")
+    public void theUserChooseUSFromHoverOverMenu() throws InterruptedException {
+        Actions actions = new Actions(Driver.get());
+        actions.moveToElement(omniLanding.HypnoseAusbildung).perform();
+        Thread.sleep(1000);
+        omniLanding.USA_hover_over.click();
+        Thread.sleep(1000);
+    }
+
+    @And("the user clicks on Secure your spot in the US")
+    public void theUserClicksOnSecureYourSpotInTheUS() throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.get();
+        js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
+        Thread.sleep(2000);
+        omniLanding.Secure_your_spot_in_the_US.click();
+        Thread.sleep(2000);
+    }
+}
