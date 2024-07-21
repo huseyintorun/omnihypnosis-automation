@@ -1,5 +1,6 @@
 package com.omni.stepdefinitions;
 
+import com.github.javafaker.Faker;
 import com.omni.pages.OmniLanding;
 import com.omni.utilities.ConfigurationReader;
 import com.omni.utilities.Driver;
@@ -10,7 +11,11 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.Set;
 
 public class OmnistartStepDefs {
 
@@ -82,53 +87,56 @@ public class OmnistartStepDefs {
 
     @And("the user fills the form")
     public void theUserFillsTheForm() throws InterruptedException {
+        Faker faker = new Faker();
+
         WebElement firstName = Driver.get().findElement(By.name("firstName"));
-        firstName.sendKeys("John");
+        firstName.sendKeys(faker.name().firstName());
         Thread.sleep(1000);
 
         WebElement lastName = Driver.get().findElement(By.name("lastName"));
-        lastName.sendKeys("Doe");
+        lastName.sendKeys(faker.name().lastName());
         Thread.sleep(1000);
 
         WebElement email = Driver.get().findElement(By.name("email"));
-        email.sendKeys("john.doe@example.com");
+        email.sendKeys(faker.internet().emailAddress());
         Thread.sleep(1000);
 
         // Dropdown (select) elemanını bulun ve seçimi yapın
-        //Select country = new Select(Driver.get().findElement(By.name("country")));
-        //country.selectByVisibleText("Germany");
-        //Thread.sleep(1000);
+        // Select country = new Select(Driver.get().findElement(By.name("country")));
+        // country.selectByVisibleText(faker.address().country());
+        // Thread.sleep(1000);
 
-        WebElement termsConditions = Driver.get().findElement(By.cssSelector("input[class='terms css-u2k63x']"));
-        termsConditions.click();
+      //  WebElement termsConditions = Driver.get().findElement(By.cssSelector("input[class='terms css-u2k63x']"));
+      //  termsConditions.click();
         Thread.sleep(1000);
 
         WebElement address1 = Driver.get().findElement(By.name("address1"));
-        address1.sendKeys("123 Main St");
+        address1.sendKeys(faker.address().streetAddress());
         Thread.sleep(1000);
 
         WebElement postalCode = Driver.get().findElement(By.name("postalCode"));
-        postalCode.sendKeys("12345");
+        postalCode.sendKeys(faker.address().zipCode());
         Thread.sleep(1000);
+
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
         js.executeScript("window.scrollBy(0, 50);");  // 100 piksel aşağı kaydırır
 
         WebElement city = Driver.get().findElement(By.name("city"));
-        city.sendKeys("Berlin");
+        city.sendKeys(faker.address().city());
         Thread.sleep(1000);
 
         WebElement vatNumber = Driver.get().findElement(By.name("vatNumber"));
-        vatNumber.sendKeys("DE123456789");
+        vatNumber.sendKeys(faker.number().digits(9));
         Thread.sleep(1000);
-        JavascriptExecutor js3 = (JavascriptExecutor) Driver.get();
-        js3.executeScript("window.scrollBy(0, 50);");  // 100 piksel aşağı kaydırır
+
+        js.executeScript("window.scrollBy(0, 50);");  // 100 piksel aşağı kaydırır
 
         WebElement businessName = Driver.get().findElement(By.name("businessName"));
-        businessName.sendKeys("Doe Enterprises");
+        businessName.sendKeys(faker.company().name());
         Thread.sleep(1000);
 
         WebElement phoneNumber = Driver.get().findElement(By.name("phoneNumber"));
-        phoneNumber.sendKeys("+491234567890");
+        phoneNumber.sendKeys(faker.phoneNumber().phoneNumber());
         Thread.sleep(1000);
     }
 
@@ -146,8 +154,9 @@ public class OmnistartStepDefs {
     }
 
     @And("the user click on apply")
-    public void theUserClickOnApply() {
+    public void theUserClickOnApply() throws InterruptedException {
         omniLanding.clickApplyCoupon.click();
+        Thread.sleep(1000);
     }
 
     @Then("the user check the total amounth zero")
@@ -171,7 +180,70 @@ public class OmnistartStepDefs {
         // Press Enter key
         actions.sendKeys(Keys.ENTER).build().perform();
 
-        Thread.sleep(28000);
+        Thread.sleep(2000);
 
     }
-}
+
+    @Then("check the URL of website correct")
+    public void checkTheURLOfWebsiteCorrect() {
+        Assert.assertTrue(Driver.get().getCurrentUrl().contains("https://www.omnihypnosis.com/"));
+    }
+
+    @Then("User confirm that Page")
+    public void userConfirmThatPage() {
+        Assert.assertTrue(Driver.get().getTitle().contains("About Omni"));
+        System.out.println("Page Title: " + Driver.get().getTitle());
+    }
+
+    @Then("user check that Lamguage changed")
+    public void userCheckThatLamguageChanged() {
+            Assert.assertTrue(Driver.get().getTitle().contains("OMNI: Dein Weg zum zertifizierten Hypnosetherapeuten"));
+            System.out.println("Page Title: " + Driver.get().getTitle());
+    }
+
+    @Then("the user checks that Order Process page opens")
+    public void theUserChecksThatOrderProcessPageOpens() {
+        Assert.assertTrue(Driver.get().getTitle().contains("OMNI Hypnoseausbildung Schweiz: Werde Hypnosetherapeut"));
+        System.out.println("Page Title: " + Driver.get().getTitle());
+    }
+
+    @Then("the user click on complete order and check if order completed or not")
+    public void theUserClickOnCompleteOrderAndCheckIfOrderCompletedOrNot() throws InterruptedException {
+        Thread.sleep(5000);
+        Actions actions = new Actions(Driver.get());
+        // Perform tab key presses
+        for (int i = 0; i < 13; i++) {
+            actions.sendKeys(Keys.TAB).build().perform();
+            Thread.sleep(100);
+        }
+
+        // Press Enter key
+        actions.sendKeys(Keys.ENTER).build().perform();
+
+        Thread.sleep(2000);
+
+        // Get the current window handle
+        String originalWindow = Driver.get().getWindowHandle();
+
+        // Wait for the new window or tab
+        WebDriverWait wait = new WebDriverWait(Driver.get(), 10);
+        wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+
+        // Get all window handles
+        Set<String> windowHandles = Driver.get().getWindowHandles();
+
+        // Check if a new window has opened
+        if (windowHandles.size() > 1) {
+            System.out.println("New window opened!");
+
+            // Switch to the new window
+            for (String windowHandle : windowHandles) {
+                if (!windowHandle.equals(originalWindow)) {
+                    Driver.get().switchTo().window(windowHandle);
+                    break;
+                }
+
+            }
+        }
+    }
+    }

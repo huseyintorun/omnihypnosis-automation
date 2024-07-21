@@ -23,6 +23,7 @@ Feature: Omni Hypnose All Click On Links
   @Smoke
  # Assertions eklenecek.
   #Java Faker class ekle
+
   #2. ürün https://www.omnihypnosis.com/courses/omni-hypnosetherapeut-zertifizierung-intensiv-live-deutschland-oesterreich
 # 3. https://www.omnihypnosis.com/courses/omni-hypnotherapist-certification-intensive-live-usa
 
