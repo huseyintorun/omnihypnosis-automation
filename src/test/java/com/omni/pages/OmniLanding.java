@@ -57,10 +57,13 @@ public class OmniLanding extends BasePage{
     @FindBy(xpath = "//a[text()=('Secure your spot in the US')]")
     public WebElement Secure_your_spot_in_the_US;
 
+    @FindBy(xpath = "(//input[@type=\"checkbox\"])[2]")
+    public WebElement checkbox;
 
 
-
-
+////button[text()="Weiter zur Zahlung ➜"]
+ //   @FindBy(xpath = "//button[text()='Weiter zur Zahlung ��']")
+   // public WebElement omweiter_zur_zahlung;
 
 
 

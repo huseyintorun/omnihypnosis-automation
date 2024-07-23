@@ -172,16 +172,24 @@ public class OmnistartStepDefs {
         Thread.sleep(5000);
         Actions actions = new Actions(Driver.get());
         // Perform tab key presses
-        for (int i = 0; i < 13; i++) {
+        for (int i = 0; i < 11; i++) {
             actions.sendKeys(Keys.TAB).build().perform();
             Thread.sleep(100);
         }
-
+Thread.sleep(10000);
         // Press Enter key
-        actions.sendKeys(Keys.ENTER).build().perform();
-
+        //actions.sendKeys(Keys.ENTER).build().perform();
+        omniLanding.checkbox.click();
         Thread.sleep(2000);
-
+        actions.sendKeys(Keys.TAB).build().perform();
+        Thread.sleep(1000);
+        actions.sendKeys(Keys.TAB).build().perform();
+        Thread.sleep(2000);
+        actions.sendKeys(Keys.ENTER).build().perform();
+        Thread.sleep(7000);
+        //omniLanding.weiter_zur_zahlung.click();
+Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
+ System.out.println("Page Title: " + Driver.get().getTitle());
     }
 
     @Then("check the URL of website correct")
@@ -212,39 +220,25 @@ public class OmnistartStepDefs {
         Thread.sleep(5000);
         Actions actions = new Actions(Driver.get());
         // Perform tab key presses
-        for (int i = 0; i < 13; i++) {
+        for (int i = 0; i < 11; i++) {
             actions.sendKeys(Keys.TAB).build().perform();
             Thread.sleep(100);
         }
-
+        Thread.sleep(10000);
         // Press Enter key
-        actions.sendKeys(Keys.ENTER).build().perform();
-
+        //actions.sendKeys(Keys.ENTER).build().perform();
+        omniLanding.checkbox.click();
         Thread.sleep(2000);
+        actions.sendKeys(Keys.TAB).build().perform();
+        Thread.sleep(1000);
+        actions.sendKeys(Keys.TAB).build().perform();
+        Thread.sleep(2000);
+        actions.sendKeys(Keys.ENTER).build().perform();
+        Thread.sleep(10000);
+        //omniLanding.weiter_zur_zahlung.click();
+        Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
+        System.out.println("Page Title: " + Driver.get().getTitle());
 
-        // Get the current window handle
-        String originalWindow = Driver.get().getWindowHandle();
-
-        // Wait for the new window or tab
-        WebDriverWait wait = new WebDriverWait(Driver.get(), 10);
-        wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-
-        // Get all window handles
-        Set<String> windowHandles = Driver.get().getWindowHandles();
-
-        // Check if a new window has opened
-        if (windowHandles.size() > 1) {
-            System.out.println("New window opened!");
-
-            // Switch to the new window
-            for (String windowHandle : windowHandles) {
-                if (!windowHandle.equals(originalWindow)) {
-                    Driver.get().switchTo().window(windowHandle);
-                    break;
-                }
-
-            }
-        }
     }
 
     @And("the User choose Deutchland from Hover Over Menu")
