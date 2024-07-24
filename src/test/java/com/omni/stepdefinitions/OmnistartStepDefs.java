@@ -98,7 +98,7 @@ public class OmnistartStepDefs {
         Thread.sleep(1000);
 
         WebElement email = Driver.get().findElement(By.name("email"));
-        email.sendKeys(faker.internet().emailAddress());
+        email.sendKeys("hansschmidtomni+"+faker.numerify("###")+"@gmail.com");
         Thread.sleep(1000);
 
         // Dropdown (select) elemanını bulun ve seçimi yapın
@@ -233,6 +233,8 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
         Thread.sleep(1000);
         actions.sendKeys(Keys.TAB).build().perform();
         Thread.sleep(2000);
+        actions.sendKeys(Keys.ENTER).build().perform();
+        Thread.sleep(10000);
         actions.sendKeys(Keys.ENTER).build().perform();
         Thread.sleep(10000);
         //omniLanding.weiter_zur_zahlung.click();
