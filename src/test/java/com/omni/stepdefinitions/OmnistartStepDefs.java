@@ -98,7 +98,7 @@ public class OmnistartStepDefs {
         Thread.sleep(1000);
 
         WebElement email = Driver.get().findElement(By.name("email"));
-        email.sendKeys("hansschmidtomni+"+faker.numerify("###")+"@gmail.com");
+        email.sendKeys("hansschmidtomni+"+faker.numerify("####")+"@gmail.com");
         Thread.sleep(1000);
 
         // Dropdown (select) elemanını bulun ve seçimi yapın
