@@ -376,7 +376,8 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
         Thread.sleep(1000);
         omniLanding.country_select_button.click();
 
-        omniLanding.united_states.click();
+       // omniLanding.united_states.click();
+         omniLanding.switzerland.click();
 
         WebElement address1 = Driver.get().findElement(By.name("address1"));
         address1.sendKeys(faker.address().streetAddress());
