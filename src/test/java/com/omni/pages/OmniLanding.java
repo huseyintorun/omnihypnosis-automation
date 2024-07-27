@@ -60,6 +60,21 @@ public class OmniLanding extends BasePage{
     @FindBy(xpath = "(//input[@type=\"checkbox\"])[2]")
     public WebElement checkbox;
 
+    ////span[normalize-space()='Switzerland']
+
+    @FindBy(xpath = "//span[normalize-space()='Switzerland']")
+    public WebElement switzerland;
+
+
+    ////button[@id='headlessui-listbox-button-:r4:']
+    @FindBy (xpath = "//button[@id='headlessui-listbox-button-:r4:']")
+    public WebElement country_select_button;
+
+    ////span[normalize-space()='United States']
+
+    @FindBy(xpath = "//span[normalize-space()='United States']")
+    public WebElement united_states;
+
 
 ////button[text()="Weiter zur Zahlung ➜"]
  //   @FindBy(xpath = "//button[text()='Weiter zur Zahlung ��']")

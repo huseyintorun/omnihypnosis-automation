@@ -279,4 +279,132 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
         omniLanding.Secure_your_spot_in_the_US.click();
         Thread.sleep(2000);
     }
+
+    @And("the user fills the form and choose Switzerland as country")
+    public void theUserFillsTheFormAndChooseSwitzerlandAsCountry() throws InterruptedException {
+        Faker faker = new Faker();
+
+        WebElement firstName = Driver.get().findElement(By.name("firstName"));
+        firstName.sendKeys(faker.name().firstName());
+        Thread.sleep(1000);
+
+        WebElement lastName = Driver.get().findElement(By.name("lastName"));
+        lastName.sendKeys(faker.name().lastName());
+        Thread.sleep(1000);
+
+        WebElement email = Driver.get().findElement(By.name("email"));
+        email.sendKeys("hansschmidtomni+"+faker.numerify("####")+"@gmail.com");
+        Thread.sleep(1000);
+
+        // Dropdown (select) elemanını bulun ve seçimi yapın
+        // Select country = new Select(Driver.get().findElement(By.name("country")));
+        // country.selectByVisibleText(faker.address().country());
+        // Thread.sleep(1000);
+
+        //  WebElement termsConditions = Driver.get().findElement(By.cssSelector("input[class='terms css-u2k63x']"));
+        //  termsConditions.click();
+        Thread.sleep(1000);
+        omniLanding.country_select_button.click();
+
+        omniLanding.switzerland.click();
+
+        WebElement address1 = Driver.get().findElement(By.name("address1"));
+        address1.sendKeys(faker.address().streetAddress());
+        Thread.sleep(1000);
+
+        WebElement postalCode = Driver.get().findElement(By.name("postalCode"));
+        postalCode.sendKeys(faker.address().zipCode());
+        Thread.sleep(1000);
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.get();
+        js.executeScript("window.scrollBy(0, 50);");  // 100 piksel aşağı kaydırır
+
+        WebElement city = Driver.get().findElement(By.name("city"));
+        city.sendKeys(faker.address().city());
+        Thread.sleep(1000);
+
+        WebElement vatNumber = Driver.get().findElement(By.name("vatNumber"));
+        vatNumber.sendKeys(faker.number().digits(9));
+        Thread.sleep(1000);
+
+        js.executeScript("window.scrollBy(0, 50);");  // 100 piksel aşağı kaydırır
+
+        WebElement businessName = Driver.get().findElement(By.name("businessName"));
+        businessName.sendKeys(faker.company().name());
+        Thread.sleep(1000);
+
+        WebElement phoneNumber = Driver.get().findElement(By.name("phoneNumber"));
+        phoneNumber.sendKeys(faker.phoneNumber().phoneNumber());
+        Thread.sleep(1000);
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    @And("the user fills the form and choose USA as country")
+    public void theUserFillsTheFormAndChooseUSAAsCountry() throws InterruptedException {
+        Faker faker = new Faker();
+
+        WebElement firstName = Driver.get().findElement(By.name("firstName"));
+        firstName.sendKeys(faker.name().firstName());
+        Thread.sleep(1000);
+
+        WebElement lastName = Driver.get().findElement(By.name("lastName"));
+        lastName.sendKeys(faker.name().lastName());
+        Thread.sleep(1000);
+
+        WebElement email = Driver.get().findElement(By.name("email"));
+        email.sendKeys("hansschmidtomni+"+faker.numerify("####")+"@gmail.com");
+        Thread.sleep(1000);
+
+        // Dropdown (select) elemanını bulun ve seçimi yapın
+        // Select country = new Select(Driver.get().findElement(By.name("country")));
+        // country.selectByVisibleText(faker.address().country());
+        // Thread.sleep(1000);
+
+        //  WebElement termsConditions = Driver.get().findElement(By.cssSelector("input[class='terms css-u2k63x']"));
+        //  termsConditions.click();
+        Thread.sleep(1000);
+        omniLanding.country_select_button.click();
+
+        omniLanding.united_states.click();
+
+        WebElement address1 = Driver.get().findElement(By.name("address1"));
+        address1.sendKeys(faker.address().streetAddress());
+        Thread.sleep(1000);
+
+        WebElement postalCode = Driver.get().findElement(By.name("postalCode"));
+        postalCode.sendKeys(faker.address().zipCode());
+        Thread.sleep(1000);
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.get();
+        js.executeScript("window.scrollBy(0, 50);");  // 100 piksel aşağı kaydırır
+
+        WebElement city = Driver.get().findElement(By.name("city"));
+        city.sendKeys(faker.address().city());
+        Thread.sleep(1000);
+
+        WebElement vatNumber = Driver.get().findElement(By.name("vatNumber"));
+        vatNumber.sendKeys(faker.number().digits(9));
+        Thread.sleep(1000);
+
+        js.executeScript("window.scrollBy(0, 50);");  // 100 piksel aşağı kaydırır
+
+        WebElement businessName = Driver.get().findElement(By.name("businessName"));
+        businessName.sendKeys(faker.company().name());
+        Thread.sleep(1000);
+
+        WebElement phoneNumber = Driver.get().findElement(By.name("phoneNumber"));
+        phoneNumber.sendKeys(faker.phoneNumber().phoneNumber());
+        Thread.sleep(1000);
+    }
 }

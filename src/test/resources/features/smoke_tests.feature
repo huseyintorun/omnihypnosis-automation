@@ -16,7 +16,7 @@ Feature: Omni Page Smoke Test
       And the user clicks on BEGINNE NOCH HEUTE starten
       Then the user checks that Order Process page opens
       When the user clicks on Jetzt Platz in der Schweiz sichern
-      And the user fills the form
+      And the user fills the form and choose Switzerland as country
       And the user click on apply coupon button
       And the user enter the coupon in the place holder
       And the user click on apply
@@ -40,7 +40,7 @@ Feature: Omni Page Smoke Test
     And the user click on OMNI Language toggle to choose german
     And the User choose US from Hover Over Menu
     And the user clicks on Secure your spot in the US
-    And the user fills the form
+    And the user fills the form and choose USA as country
     And the user click on apply coupon button
     And the user enter the coupon in the place holder
     And the user click on apply
