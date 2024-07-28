@@ -45,10 +45,14 @@ public class OmniLanding extends BasePage{
     @FindBy(xpath = "(//a[@class=\"custom-link\"])[1]")
     public WebElement HypnoseAusbildung;
 
+    ////a[normalize-space()='Hypnosis Training']
+    @FindBy(xpath = "(//a[@class=\"custom-link\"])[3]")
+    public WebElement Hypnose_Training;
+
     @FindBy(xpath = "//a[text()=\"Deutschland\"]")
     public WebElement Deuschland_hover_over;
 
-    @FindBy(xpath = "(//a[text()=\"USA\"])[1]")
+    @FindBy(xpath = "//a[text()=\"USA\"]")
     public WebElement USA_hover_over;
 
     @FindBy(xpath = "//a[text()=('Jetzt Platz in Deutschland sichern!')]")

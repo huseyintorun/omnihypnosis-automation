@@ -59,6 +59,9 @@ public class OmnistartStepDefs {
     public void theUserClickOnOMNILanguageToggleToChooseGerman() throws InterruptedException {
         omniLanding.language_Toggle.click();
         Thread.sleep(2000);
+   //     omniLanding.language_Toggle.click();
+     //   Thread.sleep(2000);
+
     }
 
     @When("the user click on OMNIfinder")
@@ -374,10 +377,10 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
         //  WebElement termsConditions = Driver.get().findElement(By.cssSelector("input[class='terms css-u2k63x']"));
         //  termsConditions.click();
         Thread.sleep(1000);
-        omniLanding.country_select_button.click();
+      //  omniLanding.country_select_button.click();
 
        // omniLanding.united_states.click();
-         omniLanding.switzerland.click();
+        // omniLanding.switzerland.click();
 
         WebElement address1 = Driver.get().findElement(By.name("address1"));
         address1.sendKeys(faker.address().streetAddress());
