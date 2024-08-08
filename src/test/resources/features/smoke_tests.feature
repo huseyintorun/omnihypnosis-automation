@@ -1,4 +1,4 @@
-@Smoke
+@smoke
 Feature: Omni Page Smoke Test
   Scenario: Check the Basis Features of Omni_hypnosis Website
     Given the user on main page
