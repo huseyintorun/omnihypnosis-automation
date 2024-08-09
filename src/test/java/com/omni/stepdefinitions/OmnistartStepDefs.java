@@ -45,6 +45,7 @@ public class OmnistartStepDefs {
 
     @And("the user click on AboutOMNI button")
     public void theUserClickOnAboutOMNIButton() throws InterruptedException {
+          Thread.sleep(3000);
         omniLanding.about_Omni.click();
         Thread.sleep(3000);
     }
@@ -74,6 +75,8 @@ public class OmnistartStepDefs {
 
     @And("the user clicks on BEGINNE NOCH HEUTE starten")
     public void theUserClicksOnBEGINNENOCHHEUTEStarten() throws InterruptedException {
+          Thread.sleep(3000);
+          Thread.sleep(3000);
         omniLanding.modul1.click();
         Thread.sleep(3000);
     }
@@ -82,6 +85,7 @@ public class OmnistartStepDefs {
     public void theUserClicksOnJetztPlatzInDerSchweizSichern() throws InterruptedException {
         // JavascriptExecutor kullanarak sayfayı az miktar aşağı kaydırma işlemi yapın
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
+          Thread.sleep(3000);
         js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
         Thread.sleep(1000);
         omniLanding.modul2.click();
@@ -145,6 +149,7 @@ public class OmnistartStepDefs {
 
     @And("the user click on apply coupon button")
     public void theUserClickOnApplyCouponButton() throws InterruptedException {
+          Thread.sleep(3000);
 
         omniLanding.applyCoupon.click();
         Thread.sleep(4000);
@@ -152,12 +157,14 @@ public class OmnistartStepDefs {
 
     @And("the user enter the coupon in the place holder")
     public void theUserEnterTheCouponInThePlaceHolder() {
+          Thread.sleep(3000);
 
         omniLanding.inputCoupon.sendKeys(ConfigurationReader.get("coupon"));
     }
 
     @And("the user click on apply")
     public void theUserClickOnApply() throws InterruptedException {
+          Thread.sleep(3000);
         omniLanding.clickApplyCoupon.click();
         Thread.sleep(1000);
     }
@@ -208,6 +215,7 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
 
     @Then("user check that Lamguage changed")
     public void userCheckThatLamguageChanged() {
+          Thread.sleep(3000);
             Assert.assertTrue(Driver.get().getTitle().contains("OMNI: Dein Weg zum zertifizierten Hypnosetherapeuten"));
             System.out.println("Page Title: " + Driver.get().getTitle());
     }
@@ -259,6 +267,7 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
     public void theUserClicksOnJetztPlatzInDeutschlandSichern() throws InterruptedException {
 
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
+          Thread.sleep(3000);
         js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
         Thread.sleep(2000);
         omniLanding.Jetzt_platz_sichern_deutschland.click();
@@ -277,6 +286,7 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
     @And("the user clicks on Secure your spot in the US")
     public void theUserClicksOnSecureYourSpotInTheUS() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
+          Thread.sleep(3000);
         js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
         Thread.sleep(2000);
         omniLanding.Secure_your_spot_in_the_US.click();
