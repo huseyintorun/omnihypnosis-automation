@@ -156,7 +156,7 @@ public class OmnistartStepDefs {
     }
 
     @And("the user enter the coupon in the place holder")
-    public void theUserEnterTheCouponInThePlaceHolder() {
+    public void theUserEnterTheCouponInThePlaceHolder() throws InterruptedException {
           Thread.sleep(3000);
 
         omniLanding.inputCoupon.sendKeys(ConfigurationReader.get("coupon"));
@@ -214,7 +214,7 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
     }
 
     @Then("user check that Lamguage changed")
-    public void userCheckThatLamguageChanged() {
+    public void userCheckThatLamguageChanged() throws InterruptedException {
           Thread.sleep(3000);
             Assert.assertTrue(Driver.get().getTitle().contains("OMNI: Dein Weg zum zertifizierten Hypnosetherapeuten"));
             System.out.println("Page Title: " + Driver.get().getTitle());
