@@ -4,7 +4,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 public class OmniLanding extends BasePage{
+    @FindBy(xpath = "(//a[@class=\"custom-link\"])[5]")
+            public WebElement ContinuingEducation;
+
+    @FindBy(xpath = "//a[@class='button button-primary w-100']")
+          public WebElement buy_now_button;
+
+  @FindBy(xpath = "//div[@data-href='/courses/hypnokids-specialist-certification-online']//a[@class='post__img']")
+          public WebElement Hypnokids_specialist_certification_online;
     WebDriverWait wait ;
 
     @FindBy(xpath = "//a[@href='https://www.omnihypnosis.com/pages/omni-finder']")
@@ -78,6 +87,9 @@ public class OmniLanding extends BasePage{
 
     @FindBy(xpath = "//span[normalize-space()='United States']")
     public WebElement united_states;
+
+    @FindBy(xpath = "//a[text()=\"Online Courses\"]")
+    public WebElement Online_courses_button;
 
 
 ////button[text()="Weiter zur Zahlung ➜"]

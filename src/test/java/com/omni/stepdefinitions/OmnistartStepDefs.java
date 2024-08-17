@@ -32,7 +32,7 @@ public class OmnistartStepDefs {
     public void theUserClickOnOMNIfinderAccepted() throws InterruptedException {
         Actions actions = new Actions(Driver.get());
         // Perform tab key presses
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 11; i++) {
             actions.sendKeys(Keys.TAB).build().perform();
             Thread.sleep(100);
         }
@@ -420,5 +420,36 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
         WebElement phoneNumber = Driver.get().findElement(By.name("phoneNumber"));
         phoneNumber.sendKeys(faker.phoneNumber().phoneNumber());
         Thread.sleep(1000);
+    }
+
+    @And("the user chhose live from Hover Over Menu Wieterbildung")
+    public void theUserChhoseLiveFromHoverOverMenuWieterbildung() throws InterruptedException {
+        Actions actions = new Actions(Driver.get());
+        actions.moveToElement(omniLanding.ContinuingEducation).perform();
+        Thread.sleep(1000);
+        omniLanding.Online_courses_button.click();
+        Thread.sleep(1000);
+
+
+    }
+
+    @And("the user choose online coursess from hoverover menu Continuing Education")
+    public void theUserChooseOnlineCoursessFromHoveroverMenuContinuingEducation() throws InterruptedException {
+        Actions actions = new Actions(Driver.get());
+        actions.moveToElement(omniLanding.ContinuingEducation).perform();
+        Thread.sleep(1000);
+        omniLanding.Online_courses_button.click();
+        Thread.sleep(1000);
+    }
+
+    @And("the user clicks on Hypnokids Certification")
+    public void theUserClicksOnHypnokidsCertification() {
+        omniLanding.Hypnokids_specialist_certification_online.click();
+    }
+
+    @And("the user clicks Buynow button")
+    public void theUserClicksBuynowButton() throws InterruptedException {
+        omniLanding.buy_now_button.click();
+        Thread.sleep(2000);
     }
 }

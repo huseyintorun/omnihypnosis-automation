@@ -45,3 +45,16 @@ Feature: Omni Page Smoke Test
     And the user enter the coupon in the place holder
     And the user click on apply
     Then the user click on complete order and check if order completed or not
+
+    Scenario: Check the availability of Hypnokids Certification online
+      Given the user on main page
+      And the user click on OMNIfinder accepted
+      And the user choose online coursess from hoverover menu Continuing Education
+      And the user clicks on Hypnokids Certification
+      And the user clicks Buynow button
+      And the user fills the form
+      And the user click on apply coupon button
+      And the user enter the coupon in the place holder
+      And the user click on apply
+      Then the user click on complete order and check if order completed or not
+
