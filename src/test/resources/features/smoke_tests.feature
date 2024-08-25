@@ -1,6 +1,6 @@
 @smoke
 Feature: Omni Page Smoke Test
-@wip
+
   Scenario: Check the Basis Features of Omni_hypnosis Website
     Given the user on main page
     Then check the URL of website correct
@@ -9,7 +9,7 @@ Feature: Omni Page Smoke Test
     Then User confirm that Page
     Then the user click on OMNI Language toggle to choose german
     Then user check that Lamguage changed
-
+@wip
   Scenario: Check the availability of order Process for Switzerland
     Given the user on main page
     And the user click on OMNIfinder accepted
@@ -22,7 +22,7 @@ Feature: Omni Page Smoke Test
     And the user enter the coupon in the place holder
     #And the user click on apply
     #Then the user click on complete order and check if order completed or not
-
+@wip
   Scenario: Check the availability of order Process for Deutschland
     Given the user on main page
     And the user click on OMNIfinder accepted
