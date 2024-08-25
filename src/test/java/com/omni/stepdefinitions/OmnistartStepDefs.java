@@ -24,7 +24,7 @@ public class OmnistartStepDefs {
     public void the_user_on_main_page() throws InterruptedException {
         String url = ConfigurationReader.get("url");
         Driver.get().get(url);
-       Thread.sleep(3000);
+       Thread.sleep(1000);
 
     }
 
@@ -40,20 +40,20 @@ public class OmnistartStepDefs {
         // Press Enter key
         actions.sendKeys(Keys.ENTER).build().perform();
 
-        Thread.sleep(2000);
+
     }
 
     @And("the user click on AboutOMNI button")
     public void theUserClickOnAboutOMNIButton() throws InterruptedException {
-          Thread.sleep(3000);
+          Thread.sleep(1000);
         omniLanding.about_Omni.click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     @When("the user clicks on euRecht accepted")
     public void theUserClicksOnEuRechtAccepted() throws InterruptedException {
       omniLanding.modul1.click();
-      Thread.sleep(3000);
+      Thread.sleep(1000);
     }
 
     @And("the user click on OMNI Language toggle to choose german")
@@ -68,13 +68,13 @@ public class OmnistartStepDefs {
     public void the_user_click_on_OMNIfinder() throws InterruptedException {
 
         omniLanding.omniFinder.click();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
 
     }
 
     @And("the user clicks on BEGINNE NOCH HEUTE starten")
     public void theUserClicksOnBEGINNENOCHHEUTEStarten() throws InterruptedException {
-          Thread.sleep(3000);
+          Thread.sleep(1000);
         omniLanding.modul1.click();
 
     }
@@ -83,11 +83,11 @@ public class OmnistartStepDefs {
     public void theUserClicksOnJetztPlatzInDerSchweizSichern() throws InterruptedException {
         // JavascriptExecutor kullanarak sayfayı az miktar aşağı kaydırma işlemi yapın
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
-          Thread.sleep(3000);
+          Thread.sleep(1000);
         js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
-        Thread.sleep(1000);
+
         omniLanding.modul2.click();
-        Thread.sleep(3000);
+
     }
 
     @And("the user fills the form")
@@ -147,22 +147,22 @@ public class OmnistartStepDefs {
 
     @And("the user click on apply coupon button")
     public void theUserClickOnApplyCouponButton() throws InterruptedException {
-          Thread.sleep(3000);
+          Thread.sleep(1000);
 
         omniLanding.applyCoupon.click();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
     @And("the user enter the coupon in the place holder")
     public void theUserEnterTheCouponInThePlaceHolder() throws InterruptedException {
-          Thread.sleep(3000);
+          Thread.sleep(1000);
 
         omniLanding.inputCoupon.sendKeys(ConfigurationReader.get("coupon"));
     }
 
     @And("the user click on apply")
     public void theUserClickOnApply() throws InterruptedException {
-          Thread.sleep(3000);
+          Thread.sleep(1000);
         omniLanding.clickApplyCoupon.click();
         Thread.sleep(1000);
     }
@@ -177,7 +177,7 @@ public class OmnistartStepDefs {
 
     @Then("the user click on complete order")
     public void theUserClickOnCompleteOrder() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         Actions actions = new Actions(Driver.get());
         // Perform tab key presses
         for (int i = 0; i < 11; i++) {
@@ -213,7 +213,7 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
 
     @Then("user check that Lamguage changed")
     public void userCheckThatLamguageChanged() throws InterruptedException {
-          Thread.sleep(3000);
+          Thread.sleep(1000);
             Assert.assertTrue(Driver.get().getTitle().contains("OMNI: Dein Weg zum zertifizierten Hypnosetherapeuten"));
             System.out.println("Page Title: " + Driver.get().getTitle());
     }
@@ -265,11 +265,11 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
     public void theUserClicksOnJetztPlatzInDeutschlandSichern() throws InterruptedException {
 
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
-          Thread.sleep(3000);
+          Thread.sleep(1000);
         js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         omniLanding.Jetzt_platz_sichern_deutschland.click();
-        Thread.sleep(2000);
+
     }
 
     @And("the User choose US from Hover Over Menu")
@@ -284,11 +284,10 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
     @And("the user clicks on Secure your spot in the US")
     public void theUserClicksOnSecureYourSpotInTheUS() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
-          Thread.sleep(3000);
         js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         omniLanding.Secure_your_spot_in_the_US.click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @And("the user fills the form and choose Switzerland as country")
@@ -350,15 +349,6 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
 
 
 
-
-
-
-
-
-
-
-
-
     }
 
     @And("the user fills the form and choose USA as country")
@@ -376,19 +366,6 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
         WebElement email = Driver.get().findElement(By.name("email"));
         email.sendKeys("hansschmidtomni+"+faker.numerify("####")+"@gmail.com");
         Thread.sleep(1000);
-
-        // Dropdown (select) elemanını bulun ve seçimi yapın
-        // Select country = new Select(Driver.get().findElement(By.name("country")));
-        // country.selectByVisibleText(faker.address().country());
-        // Thread.sleep(1000);
-
-        //  WebElement termsConditions = Driver.get().findElement(By.cssSelector("input[class='terms css-u2k63x']"));
-        //  termsConditions.click();
-        Thread.sleep(1000);
-      //  omniLanding.country_select_button.click();
-
-       // omniLanding.united_states.click();
-        // omniLanding.switzerland.click();
 
         WebElement address1 = Driver.get().findElement(By.name("address1"));
         address1.sendKeys(faker.address().streetAddress());
