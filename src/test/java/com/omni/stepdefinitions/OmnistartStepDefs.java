@@ -60,8 +60,7 @@ public class OmnistartStepDefs {
     public void theUserClickOnOMNILanguageToggleToChooseGerman() throws InterruptedException {
         omniLanding.language_Toggle.click();
         Thread.sleep(2000);
-   //     omniLanding.language_Toggle.click();
-     //   Thread.sleep(2000);
+
 
     }
 
