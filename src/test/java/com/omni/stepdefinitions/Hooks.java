@@ -4,6 +4,7 @@ import com.omni.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -17,6 +18,7 @@ public class Hooks {
         System.out.println("\tthis is coming from BEFORE");
         Driver.get().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         Driver.get().manage().window().maximize();
+        Driver.get().manage().window().setSize(new Dimension(1920, 1080));
     }
 
     @After

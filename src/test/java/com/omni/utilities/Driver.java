@@ -30,6 +30,13 @@ public class Driver {
                 case "chrome":
                     DesiredCapabilities desiredCap = DesiredCapabilities.chrome();
                     desiredCap.acceptInsecureCerts();
+                    /*
+                    options = webdriver.ChromeOptions()
+                    options.add_argument("--window-size=1920,1080")
+
+                    driver = webdriver.Chrome(options=options)
+                    driver.get("https://example.com")
+                        */
                     desiredCap.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
                     desiredCap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 
