@@ -1,6 +1,6 @@
 @smoke
 Feature: Omni Page Smoke Test
-
+@wip
   Scenario: Check the Basis Features of Omni_hypnosis Website
     Given the user on main page
     Then check the URL of website correct
