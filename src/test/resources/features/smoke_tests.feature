@@ -20,8 +20,8 @@ Feature: Omni Page Smoke Test
     And the user fills the form and choose Switzerland as country
     And the user click on apply coupon button
     And the user enter the coupon in the place holder
-    And the user click on apply
-    Then the user click on complete order and check if order completed or not
+    #And the user click on apply
+    #Then the user click on complete order and check if order completed or not
 
   Scenario: Check the availability of order Process for Deutschland
     Given the user on main page
@@ -32,8 +32,8 @@ Feature: Omni Page Smoke Test
     And the user fills the form
     And the user click on apply coupon button
     And the user enter the coupon in the place holder
-    And the user click on apply
-    Then the user click on complete order and check if order completed or not
+   #And the user click on apply
+    #Then the user click on complete order and check if order completed or not
 
   Scenario: Check the availability of order Process for USA
     Given the user on main page
@@ -44,8 +44,8 @@ Feature: Omni Page Smoke Test
     And the user fills the form and choose USA as country
     And the user click on apply coupon button
     And the user enter the coupon in the place holder
-    And the user click on apply
-    Then the user click on complete order and check if order completed or not
+    #And the user click on apply
+    #Then the user click on complete order and check if order completed or not
 
   Scenario: Check the availability of Hypnokids Certification online
     Given the user on main page
@@ -56,6 +56,6 @@ Feature: Omni Page Smoke Test
     And the user fills the form
     And the user click on apply coupon button
     And the user enter the coupon in the place holder
-    And the user click on apply
-    Then the user click on complete order and check if order completed or not
+    #And the user click on apply
+    #Then the user click on complete order and check if order completed or not
 

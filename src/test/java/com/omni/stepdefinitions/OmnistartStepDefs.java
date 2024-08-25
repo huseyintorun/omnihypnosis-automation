@@ -75,9 +75,8 @@ public class OmnistartStepDefs {
     @And("the user clicks on BEGINNE NOCH HEUTE starten")
     public void theUserClicksOnBEGINNENOCHHEUTEStarten() throws InterruptedException {
           Thread.sleep(3000);
-          Thread.sleep(3000);
         omniLanding.modul1.click();
-        Thread.sleep(3000);
+
     }
 
     @When("the user clicks on Jetzt Platz in der Schweiz sichern")
