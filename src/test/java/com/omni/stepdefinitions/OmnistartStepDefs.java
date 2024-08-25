@@ -81,10 +81,13 @@ public class OmnistartStepDefs {
 
     @When("the user clicks on Jetzt Platz in der Schweiz sichern")
     public void theUserClicksOnJetztPlatzInDerSchweizSichern() throws InterruptedException {
-        // JavascriptExecutor kullanarak sayfayı az miktar aşağı kaydırma işlemi yapın
+        Actions actions = new Actions(Driver.get());
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
-          Thread.sleep(1000);
-        js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
+        Thread.sleep(3000);
+        for (int i = 0; i < 10; i++) {
+            actions.sendKeys(Keys.ARROW_DOWN).build().perform();
+            Thread.sleep(100);
+        }
 
         omniLanding.modul2.click();
 
@@ -263,10 +266,14 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
 
     @And("the user clicks on Jetzt Platz in Deutschland sichern")
     public void theUserClicksOnJetztPlatzInDeutschlandSichern() throws InterruptedException {
-
+        Actions actions = new Actions(Driver.get());
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
-          Thread.sleep(1000);
-        js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
+          Thread.sleep(3000);
+        for (int i = 0; i < 10; i++) {
+            actions.sendKeys(Keys.ARROW_DOWN).build().perform();
+            Thread.sleep(100);
+        }
+       // js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
         Thread.sleep(1000);
         omniLanding.Jetzt_platz_sichern_deutschland.click();
 
