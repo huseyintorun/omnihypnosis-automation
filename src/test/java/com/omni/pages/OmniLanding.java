@@ -55,14 +55,14 @@ public class OmniLanding extends BasePage{
     public WebElement HypnoseAusbildung;
 
     ////a[normalize-space()='Hypnosis Training']
-    @FindBy(xpath = "(//a[@class=\"custom-link\"])[3]")
-    public WebElement Hypnose_Training;
+    //@FindBy(xpath = "(//a[@class=\"custom-link\"])[3]")
+   // public WebElement Hypnose_Training;
 
     @FindBy(xpath = "//a[text()=\"Deutschland\"]")
     public WebElement Deuschland_hover_over;
 
-    @FindBy(xpath = "//a[text()=\"USA\"]")
-    public WebElement USA_hover_over;
+  @FindBy(xpath = "(//a[text()=\"USA\"])[2]")
+  public WebElement USA_hover_over;
 
     @FindBy(xpath = "//a[text()=('Jetzt Platz in Deutschland sichern!')]")
     public WebElement Jetzt_platz_sichern_deutschland;
@@ -96,7 +96,8 @@ public class OmniLanding extends BasePage{
  //   @FindBy(xpath = "//button[text()='Weiter zur Zahlung ��']")
    // public WebElement omweiter_zur_zahlung;
 
-
+  @FindBy(xpath = "(//a[@class=\"custom-link\"])[4]")
+  public WebElement HypnoseTraining;
 
 
 

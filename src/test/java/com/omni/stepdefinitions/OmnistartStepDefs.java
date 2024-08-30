@@ -282,7 +282,7 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
     @And("the User choose US from Hover Over Menu")
     public void theUserChooseUSFromHoverOverMenu() throws InterruptedException {
         Actions actions = new Actions(Driver.get());
-        actions.moveToElement(omniLanding.HypnoseAusbildung).perform();
+        actions.moveToElement(omniLanding.HypnoseTraining).perform();
         Thread.sleep(1000);
         omniLanding.USA_hover_over.click();
         Thread.sleep(1000);
