@@ -8,7 +8,7 @@ Feature: Omni Page Smoke Test
     And the user click on AboutOMNI button
     Then User confirm that Page
     Then the user click on OMNI Language toggle to choose german
-    Then user check that Lamguage changed
+    Then user check that Language changed
 
   Scenario: Check the availability of order Process for Switzerland
     Given the user on main page

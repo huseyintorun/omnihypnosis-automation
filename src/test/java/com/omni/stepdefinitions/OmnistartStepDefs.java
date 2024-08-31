@@ -214,8 +214,8 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
         System.out.println("Page Title: " + Driver.get().getTitle());
     }
 
-    @Then("user check that Lamguage changed")
-    public void userCheckThatLamguageChanged() throws InterruptedException {
+    @Then("user check that Language changed")
+    public void userCheckThatLanguageChanged() throws InterruptedException {
           Thread.sleep(1000);
             Assert.assertTrue(Driver.get().getTitle().contains("OMNI: Dein Weg zum zertifizierten Hypnosetherapeuten"));
             System.out.println("Page Title: " + Driver.get().getTitle());
