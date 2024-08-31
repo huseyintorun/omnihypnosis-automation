@@ -38,7 +38,6 @@ Feature: Omni Page Smoke Test
   Scenario: Check the availability of order Process for USA
     Given the user on main page
     And the user click on OMNIfinder accepted
-   # And the user click on OMNI Language toggle to choose german
     And the User choose US from Hover Over Menu
     And the user clicks on Secure your spot in the US
     And the user fills the form and choose USA as country
