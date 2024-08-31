@@ -1,60 +1,60 @@
 @smoke
 Feature: Omni Page Smoke Test
 
-  Scenario: Check the Basis Features of Omni_hypnosis Website
-    Given the user on main page
-    Then check the URL of website correct
-    When the user click on OMNIfinder accepted
-    And the user click on AboutOMNI button
-    Then User confirm that Page
-    Then the user click on OMNI Language toggle to choose german
-    Then user check that Language changed
+  Scenario: Check the basic features of the Omni hypnosis website
+    Given the user is on the main page
+    Then the URL of the website should be correct
+    When the user clicks on the Cookiebot Alle zulassen button
+    And the user click on About OMNI button
+    Then the AboutOMNI page should be confirmed
+    When the user clicks on the OMNI Language toggle to choose German
+    Then the language should change to German
 
-  Scenario: Check the availability of order Process for Switzerland
-    Given the user on main page
-    And the user click on OMNIfinder accepted
-    And the user click on OMNI Language toggle to choose german
-    And the user clicks on BEGINNE NOCH HEUTE starten
-    Then the user checks that Order Process page opens
+  Scenario: Check the availability of order process for Switzerland
+    Given the user is on the main page
+    When the user clicks on the Cookiebot Alle zulassen button
+    And the user clicks on the OMNI Language toggle to choose German
+    And the user clicks on BEGINNE NOCH HEUTE button
+    Then the Order Process page should open
     When the user clicks on Jetzt Platz in der Schweiz sichern
-    And the user fills the form and choose Switzerland as country
-    And the user click on apply coupon button
-    And the user enter the coupon in the place holder
-    And the user click on apply
-    Then the user click on complete order and check if order completed or not
+    And the user fills out the form and chooses Switzerland as the country
+    And the user clicks on Hast du einen Gutscheincode?
+    And the user enters the coupon in the placeholder
+    And the user clicks on apply
+    Then the user clicks on complete order and verifies if the order is completed
 
-  Scenario: Check the availability of order Process for Deutschland
-    Given the user on main page
-    And the user click on OMNIfinder accepted
-    And the user click on OMNI Language toggle to choose german
+  Scenario: Check the availability of order process for Germany
+    Given the user is on the main page
+    When the user clicks on the Cookiebot Alle zulassen button
+    And the user clicks on the OMNI Language toggle to choose German
     And the User choose Deutchland from Hover Over Menu
     And the user clicks on Jetzt Platz in Deutschland sichern
     And the user fills the form
-    And the user click on apply coupon button
-    And the user enter the coupon in the place holder
-    And the user click on apply
-    Then the user click on complete order and check if order completed or not
+    And the user clicks on Hast du einen Gutscheincode?
+    And the user enters the coupon in the placeholder
+    And the user clicks on apply
+    Then the user clicks on complete order and verifies if the order is completed
 
-  Scenario: Check the availability of order Process for USA
-    Given the user on main page
-    And the user click on OMNIfinder accepted
+  Scenario: Check the availability of order process for the USA
+    Given the user is on the main page
+    When the user clicks on the Cookiebot Alle zulassen button
     And the User choose US from Hover Over Menu
     And the user clicks on Secure your spot in the US
     And the user fills the form and choose USA as country
-    And the user click on apply coupon button
-    And the user enter the coupon in the place holder
-    And the user click on apply
-    Then the user click on complete order and check if order completed or not
+    And the user clicks on Hast du einen Gutscheincode?
+    And the user enters the coupon in the placeholder
+    And the user clicks on apply
+    Then the user clicks on complete order and verifies if the order is completed
 
   Scenario: Check the availability of Hypnokids Certification online
-    Given the user on main page
-    And the user click on OMNIfinder accepted
+    Given the user is on the main page
+    When the user clicks on the Cookiebot Alle zulassen button
     And the user choose online coursess from hoverover menu Continuing Education
     And the user clicks on Hypnokids Certification
-    And the user clicks Buynow button
+    And the user clicks on the Buynow button
     And the user fills the form
-    And the user click on apply coupon button
-    And the user enter the coupon in the place holder
-    And the user click on apply
-    Then the user click on complete order and check if order completed or not
+    And the user clicks on Hast du einen Gutscheincode?
+    And the user enters the coupon in the placeholder
+    And the user clicks on apply
+    Then the user clicks on complete order and verifies if the order is completed
 
