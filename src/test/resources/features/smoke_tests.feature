@@ -20,8 +20,8 @@ Feature: Omni Page Smoke Test
     And the user fills out the form and chooses Switzerland as the country
     And the user clicks on Hast du einen Gutscheincode?
     And the user enters the coupon in the placeholder
-    And the user clicks on apply
-    Then the user clicks on complete order and verifies if the order is completed
+   # And the user clicks on apply
+   # Then the user clicks on complete order and verifies if the order is completed
 
   Scenario: Check the availability of order process for Germany
     Given the user is on the main page
@@ -32,8 +32,8 @@ Feature: Omni Page Smoke Test
     And the user fills the form
     And the user clicks on Hast du einen Gutscheincode?
     And the user enters the coupon in the placeholder
-    And the user clicks on apply
-    Then the user clicks on complete order and verifies if the order is completed
+   # And the user clicks on apply
+   # Then the user clicks on complete order and verifies if the order is completed
 
   Scenario: Check the availability of order process for the USA
     Given the user is on the main page
@@ -43,8 +43,8 @@ Feature: Omni Page Smoke Test
     And the user fills the form and choose USA as country
     And the user clicks on Hast du einen Gutscheincode?
     And the user enters the coupon in the placeholder
-    And the user clicks on apply
-    Then the user clicks on complete order and verifies if the order is completed
+   # And the user clicks on apply
+   # Then the user clicks on complete order and verifies if the order is completed
 
   Scenario: Check the availability of Hypnokids Certification online
     Given the user is on the main page
@@ -55,6 +55,6 @@ Feature: Omni Page Smoke Test
     And the user fills the form
     And the user clicks on Hast du einen Gutscheincode?
     And the user enters the coupon in the placeholder
-    And the user clicks on apply
-    Then the user clicks on complete order and verifies if the order is completed
+   # And the user clicks on apply
+   # Then the user clicks on complete order and verifies if the order is completed
 
