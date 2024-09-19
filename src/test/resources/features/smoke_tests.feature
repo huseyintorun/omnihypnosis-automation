@@ -28,6 +28,7 @@ Feature: Omni Page Smoke Test
     When the user clicks on the Cookiebot Alle zulassen button
     And the user clicks on the OMNI Language toggle to choose German
     And the User choose Deutchland from Hover Over Menu
+    And the user choose Omni Intensive Deutschland
     And the user clicks on Jetzt Platz in Deutschland sichern
     And the user fills the form
     And the user clicks on Hast du einen Gutscheincode?
@@ -50,7 +51,7 @@ Feature: Omni Page Smoke Test
     Given the user is on the main page
     When the user clicks on the Cookiebot Alle zulassen button
     And the user choose online coursess from hoverover menu Continuing Education
-    And the user clicks on Hypnokids Certification
+    And the user clicks on Hypnokids Specialist Online
     And the user clicks on the Buynow button
     And the user fills the form
     And the user clicks on Hast du einen Gutscheincode?

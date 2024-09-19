@@ -12,9 +12,17 @@ public class OmniLanding extends BasePage{
     @FindBy(xpath = "//a[@class='button button-primary w-100']")
           public WebElement buy_now_button;
 
-  @FindBy(xpath = "//div[@data-href='/courses/hypnokids-specialist-certification-online']//a[@class='post__img']")
-          public WebElement Hypnokids_specialist_certification_online;
-    WebDriverWait wait ;
+ // @FindBy(xpath = "//div[@data-href='/courses/hypnokids-specialist-certification-online']//a[@class='post__img']")
+   //       public WebElement Hypnokids_specialist_certification_online;
+  @FindBy(xpath = "//a[contains(@href, \"hypnokids-specialist-certification-online\")]\n")
+  public WebElement Hypnokids_specialist_certification_online;
+
+    @FindBy(xpath = "//a[@href=\"/courses/hypnokids-specialist-zertifizierung-online\"]")
+    public WebElement Hypnokids_Online2;
+
+
+
+
 
     @FindBy(xpath = "//a[@href='https://www.omnihypnosis.com/pages/omni-finder']")
     public WebElement omniFinder ;
@@ -58,10 +66,16 @@ public class OmniLanding extends BasePage{
     //@FindBy(xpath = "(//a[@class=\"custom-link\"])[3]")
    // public WebElement Hypnose_Training;
 
-    @FindBy(xpath = "//a[text()=\"Deutschland\"]")
+    @FindBy(xpath = "//a[text()=\"Live in 8 Tagen\"]")
     public WebElement Deuschland_hover_over;
+  @FindBy(xpath = "//a[@href=\"/courses/omni-hypnosetherapeut-zertifizierung-intensiv-live-deutschland-oesterreich\"]")
+  public WebElement Deuschland_intensiveausbildung;
 
-  @FindBy(xpath = "(//a[text()=\"USA\"])[2]")
+  @FindBy(xpath = "//a[@href=\"https://www.omnihypnosis.com/pages/continuing-education-online\"]")
+  public WebElement Online_Courses;
+
+
+  @FindBy(xpath = "//a[@href=\"https://www.omnihypnosis.com/courses/omni-hypnotherapist-certification-intensive-live-usa\"]\n")
   public WebElement USA_hover_over;
 
     @FindBy(xpath = "//a[text()=('Jetzt Platz in Deutschland sichern!')]")

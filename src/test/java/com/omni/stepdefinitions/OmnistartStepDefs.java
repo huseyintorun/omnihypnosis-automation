@@ -20,11 +20,12 @@ import java.util.Set;
 public class OmnistartStepDefs {
 
     OmniLanding omniLanding = new OmniLanding();
+
     @Given("the user is on the main page")
     public void the_user_is_on_the_main_page() throws InterruptedException {
         String url = ConfigurationReader.get("url");
         Driver.get().get(url);
-       Thread.sleep(1000);
+        Thread.sleep(1000);
 
     }
 
@@ -46,15 +47,15 @@ public class OmnistartStepDefs {
 
     @And("the user click on About OMNI button")
     public void theUserClickOnAboutOMNIButton() throws InterruptedException {
-          Thread.sleep(1000);
+        Thread.sleep(1000);
         omniLanding.about_Omni.click();
         Thread.sleep(1000);
     }
 
     @When("the user clicks on euRecht accepted")
     public void theUserClicksOnEuRechtAccepted() throws InterruptedException {
-      omniLanding.modul1.click();
-      Thread.sleep(1000);
+        omniLanding.modul1.click();
+        Thread.sleep(1000);
     }
 
     @And("the user clicks on the OMNI Language toggle to choose German")
@@ -75,7 +76,7 @@ public class OmnistartStepDefs {
 
     @And("the user clicks on BEGINNE NOCH HEUTE button")
     public void theUserClicksOnBEGINNENOCHHEUTEStarten() throws InterruptedException {
-          Thread.sleep(3000);
+        Thread.sleep(3000);
         omniLanding.modul1.click();
 
     }
@@ -107,7 +108,7 @@ public class OmnistartStepDefs {
         Thread.sleep(1000);
 
         WebElement email = Driver.get().findElement(By.name("email"));
-        email.sendKeys("hansschmidtomni+"+faker.numerify("####")+"@gmail.com");
+        email.sendKeys("hansschmidtomni+" + faker.numerify("####") + "@gmail.com");
         Thread.sleep(1000);
 
         // Dropdown (select) elemanını bulun ve seçimi yapın
@@ -115,8 +116,8 @@ public class OmnistartStepDefs {
         // country.selectByVisibleText(faker.address().country());
         // Thread.sleep(1000);
 
-      //  WebElement termsConditions = Driver.get().findElement(By.cssSelector("input[class='terms css-u2k63x']"));
-      //  termsConditions.click();
+        //  WebElement termsConditions = Driver.get().findElement(By.cssSelector("input[class='terms css-u2k63x']"));
+        //  termsConditions.click();
         Thread.sleep(1000);
 
         WebElement address1 = Driver.get().findElement(By.name("address1"));
@@ -151,7 +152,7 @@ public class OmnistartStepDefs {
 
     @And("the user clicks on Hast du einen Gutscheincode?")
     public void theUserClickOnApplyCouponButton() throws InterruptedException {
-          Thread.sleep(1000);
+        Thread.sleep(1000);
 
         omniLanding.applyCoupon.click();
         Thread.sleep(2000);
@@ -159,23 +160,23 @@ public class OmnistartStepDefs {
 
     @And("the user enters the coupon in the placeholder")
     public void theUserEnterTheCouponInThePlaceHolder() throws InterruptedException {
-          Thread.sleep(1000);
+        Thread.sleep(1000);
 
         omniLanding.inputCoupon.sendKeys(ConfigurationReader.get("coupon"));
     }
 
     @And("the user clicks on apply")
     public void theUserClickOnApply() throws InterruptedException {
-          Thread.sleep(1000);
+        Thread.sleep(1000);
         omniLanding.clickApplyCoupon.click();
         Thread.sleep(1000);
     }
 
     @Then("the user check the total amounth zero")
     public void theUserCheckTheTotalAmounthZero() {
-        String expectedResult= "0";
+        String expectedResult = "0";
         String actualResult = omniLanding.totalAmounth.getText();
-        Assert.assertEquals(expectedResult,actualResult);
+        Assert.assertEquals(expectedResult, actualResult);
 
     }
 
@@ -188,7 +189,7 @@ public class OmnistartStepDefs {
             actions.sendKeys(Keys.TAB).build().perform();
             Thread.sleep(100);
         }
-Thread.sleep(10000);
+        Thread.sleep(10000);
         // Press Enter key
         //actions.sendKeys(Keys.ENTER).build().perform();
         omniLanding.checkbox.click();
@@ -200,8 +201,8 @@ Thread.sleep(10000);
         actions.sendKeys(Keys.ENTER).build().perform();
         Thread.sleep(7000);
         //omniLanding.weiter_zur_zahlung.click();
-Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
- System.out.println("Page Title: " + Driver.get().getTitle());
+        Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
+        System.out.println("Page Title: " + Driver.get().getTitle());
     }
 
     @Then("the URL of the website should be correct")
@@ -217,9 +218,9 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
 
     @Then("the language should change to German")
     public void userCheckThatLanguageChanged() throws InterruptedException {
-          Thread.sleep(1000);
-            Assert.assertTrue(Driver.get().getTitle().contains("OMNI: Dein Weg zum zertifizierten Hypnosetherapeuten"));
-            System.out.println("Page Title: " + Driver.get().getTitle());
+        Thread.sleep(1000);
+        Assert.assertTrue(Driver.get().getTitle().contains("OMNI: Dein Weg zum zertifizierten Hypnosetherapeuten"));
+        System.out.println("Page Title: " + Driver.get().getTitle());
     }
 
     @Then("the Order Process page should open")
@@ -269,12 +270,12 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
     public void theUserClicksOnJetztPlatzInDeutschlandSichern() throws InterruptedException {
         Actions actions = new Actions(Driver.get());
         JavascriptExecutor js = (JavascriptExecutor) Driver.get();
-          Thread.sleep(3000);
+        Thread.sleep(3000);
         for (int i = 0; i < 10; i++) {
             actions.sendKeys(Keys.ARROW_DOWN).build().perform();
             Thread.sleep(100);
         }
-       // js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
+        // js.executeScript("window.scrollBy(0, 250);");  // 100 piksel aşağı kaydırır
         Thread.sleep(1000);
         omniLanding.Jetzt_platz_sichern_deutschland.click();
 
@@ -311,7 +312,7 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
         Thread.sleep(1000);
 
         WebElement email = Driver.get().findElement(By.name("email"));
-        email.sendKeys("hansschmidtomni+"+faker.numerify("####")+"@gmail.com");
+        email.sendKeys("hansschmidtomni+" + faker.numerify("####") + "@gmail.com");
         Thread.sleep(1000);
 
         Thread.sleep(1000);
@@ -349,7 +350,6 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
         Thread.sleep(1000);
 
 
-
     }
 
     @And("the user fills the form and choose USA as country")
@@ -365,7 +365,7 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
         Thread.sleep(1000);
 
         WebElement email = Driver.get().findElement(By.name("email"));
-        email.sendKeys("hansschmidtomni+"+faker.numerify("####")+"@gmail.com");
+        email.sendKeys("hansschmidtomni+" + faker.numerify("####") + "@gmail.com");
         Thread.sleep(1000);
 
         WebElement address1 = Driver.get().findElement(By.name("address1"));
@@ -427,5 +427,17 @@ Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
     public void theUserClicksBuynowButton() throws InterruptedException {
         omniLanding.buy_now_button.click();
         Thread.sleep(2000);
+    }
+
+    @And("the user choose Omni Intensive Deutschland")
+    public void theUserChooseOmniIntensiveDeutschland() {
+        omniLanding.Deuschland_intensiveausbildung.click();
+    }
+
+
+    @And("the user clicks on Hypnokids Specialist Online")
+    public void theUserClicksOnHypnokidsSpecialistOnline() {
+        omniLanding.Hypnokids_specialist_certification_online.click();
+
     }
 }
