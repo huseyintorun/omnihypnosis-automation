@@ -286,7 +286,7 @@ public class OmnistartStepDefs {
         Actions actions = new Actions(Driver.get());
         actions.moveToElement(omniLanding.HypnoseTraining).perform();
         Thread.sleep(1000);
-        omniLanding.USA_hover_over.click();
+        omniLanding.USA2_hover_over.click();
         Thread.sleep(1000);
     }
 
@@ -439,5 +439,17 @@ public class OmnistartStepDefs {
     public void theUserClicksOnHypnokidsSpecialistOnline() {
         omniLanding.Hypnokids_specialist_certification_online.click();
 
+    }
+
+    @And("the user choose Omni Intensive USA training")
+    public void theUserChooseOmniIntensiveUSATraining() throws InterruptedException {
+        Actions actions = new Actions(Driver.get());
+        JavascriptExecutor js = (JavascriptExecutor) Driver.get();
+        Thread.sleep(3000);
+        for (int i = 0; i < 10; i++) {
+            actions.sendKeys(Keys.ARROW_DOWN).build().perform();
+        }
+            Thread.sleep(100);
+        omniLanding.USA_son.click();
     }
 }

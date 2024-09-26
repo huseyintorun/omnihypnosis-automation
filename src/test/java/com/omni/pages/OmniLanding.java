@@ -68,6 +68,9 @@ public class OmniLanding extends BasePage{
 
     @FindBy(xpath = "//a[text()=\"Live in 8 Tagen\"]")
     public WebElement Deuschland_hover_over;
+
+    @FindBy(xpath = "//a[text()=\"Live in 8 days\"]")
+    public WebElement USA2_hover_over;
   @FindBy(xpath = "//a[@href=\"/courses/omni-hypnosetherapeut-zertifizierung-intensiv-live-deutschland-oesterreich\"]")
   public WebElement Deuschland_intensiveausbildung;
 
@@ -75,8 +78,8 @@ public class OmniLanding extends BasePage{
   public WebElement Online_Courses;
 
 
-  @FindBy(xpath = "//a[@href=\"https://www.omnihypnosis.com/courses/omni-hypnotherapist-certification-intensive-live-usa\"]\n")
-  public WebElement USA_hover_over;
+  @FindBy(xpath = "//a[@href='/courses/omni-hypnotherapist-certification-intensive-live-usa']")
+  public WebElement USA_son;
 
     @FindBy(xpath = "//a[text()=('Jetzt Platz in Deutschland sichern!')]")
     public WebElement Jetzt_platz_sichern_deutschland;

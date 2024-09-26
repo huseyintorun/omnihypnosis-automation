@@ -40,6 +40,7 @@ Feature: Omni Page Smoke Test
     Given the user is on the main page
     When the user clicks on the Cookiebot Alle zulassen button
     And the User choose US from Hover Over Menu
+    And the user choose Omni Intensive USA training
     And the user clicks on Secure your spot in the US
     And the user fills the form and choose USA as country
     And the user clicks on Hast du einen Gutscheincode?
