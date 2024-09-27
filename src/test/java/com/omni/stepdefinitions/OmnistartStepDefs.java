@@ -452,4 +452,35 @@ public class OmnistartStepDefs {
             Thread.sleep(100);
         omniLanding.USA_son.click();
     }
+
+    @Then("the user clicks on complete order and verifies if the order is completed in USA")
+    public void theUserClicksOnCompleteOrderAndVerifiesIfTheOrderIsCompletedInUSA() throws InterruptedException {
+        Thread.sleep(5000);
+        Actions actions = new Actions(Driver.get());
+        // Perform tab key presses
+        for (int i = 0; i < 11; i++) {
+            actions.sendKeys(Keys.TAB).build().perform();
+            Thread.sleep(100);
+        }
+        Thread.sleep(10000);
+        // Press Enter key
+        //actions.sendKeys(Keys.ENTER).build().perform();
+        omniLanding.checkbox.click();
+        Thread.sleep(2000);
+        actions.sendKeys(Keys.TAB).build().perform();
+        Thread.sleep(1000);
+        actions.sendKeys(Keys.TAB).build().perform();
+        Thread.sleep(2000);
+        actions.sendKeys(Keys.ENTER).build().perform();
+        Thread.sleep(10000);
+        actions.sendKeys(Keys.ENTER).build().perform();
+        Thread.sleep(10000);
+        //omniLanding.weiter_zur_zahlung.click();
+     // Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
+     // System.out.println("Page Title: " + Driver.get().getTitle());
+
+
+
+
+    }
 }

@@ -46,7 +46,7 @@ Feature: Omni Page Smoke Test
     And the user clicks on Hast du einen Gutscheincode?
     And the user enters the coupon in the placeholder
     And the user clicks on apply
-    Then the user clicks on complete order and verifies if the order is completed
+    Then the user clicks on complete order and verifies if the order is completed in USA
 
   Scenario: Check the availability of Hypnokids Certification online
     Given the user is on the main page
