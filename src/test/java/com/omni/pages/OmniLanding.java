@@ -117,7 +117,29 @@ public class OmniLanding extends BasePage{
   public WebElement HypnoseTraining;
 
 
+////a[normalize-space()='Sign In']
 
+    @FindBy(xpath = "//a[normalize-space()='Sign In']")
+    public WebElement sign_in;
+
+    // //div[@class='sign-in__wrapper']//div[1]//input[1]
+
+    @FindBy(xpath = "//div[@class='sign-in__wrapper']//div[1]//input[1]")
+    public WebElement email;
+
+    ////div[2]//input[1]
+
+        @FindBy(xpath = "//div[@class='sign-in__wrapper']//div[2]//input[1]")
+    public WebElement password;
+
+        ////button[@type='submit']
+
+        @FindBy(xpath = "//button[@type='submit']")
+    public WebElement sign_in_button_2;
+
+        ////h1[normalize-space()='All Products']
+    @FindBy(xpath = "//h1[normalize-space()='All Products']")
+    public WebElement main_menu;
 
 
 

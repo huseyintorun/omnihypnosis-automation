@@ -483,4 +483,24 @@ public class OmnistartStepDefs {
 
 
     }
+
+
+
+    @And("the user clicks on the Sign in button and enter credentials and click second sign in button")
+    public void theUserClicksOnTheSignInButtonAndEnterCredentialsAndClickSecondSignInButton() throws InterruptedException {
+        omniLanding.sign_in.click();
+        Thread.sleep(2000);
+        omniLanding.email.sendKeys("egzy5561@gmail.com");
+        Thread.sleep(1000);
+        omniLanding.password.sendKeys("26Aralik1990");
+        Thread.sleep(1000);
+        omniLanding.sign_in_button_2.click();
+        Thread.sleep(3000);
+    }
+
+    @Then("the user is logged in and the main menü appears")
+    public void theUserIsLoggedInAndTheMainMenüAppears() {
+        Assert.assertTrue(omniLanding.main_menu.isDisplayed());
+        System.out.println("Main Menu is displayed");
+    }
 }
