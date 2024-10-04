@@ -498,8 +498,11 @@ public class OmnistartStepDefs {
         Thread.sleep(3000);
     }
 
-    @Then("the user is logged in and the main menü appears")
-    public void theUserIsLoggedInAndTheMainMenüAppears() {
+
+
+    @Then("the user is logged in and the main menu appears")
+    public void theUserIsLoggedInAndTheMainMenuAppears() {
+
         Assert.assertTrue(omniLanding.main_menu.isDisplayed());
         System.out.println("Main Menu is displayed");
     }
