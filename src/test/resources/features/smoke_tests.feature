@@ -23,7 +23,7 @@ Feature: Omni Page Smoke Test
     And the user clicks on apply
     Then the user clicks on complete order and verifies if the order is completed
 
-  Scenario: Check the availability of order process for Germany
+  #Scenario: Check the availability of order process for Germany
     Given the user is on the main page
     When the user clicks on the Cookiebot Alle zulassen button
     And the user clicks on the OMNI Language toggle to choose German

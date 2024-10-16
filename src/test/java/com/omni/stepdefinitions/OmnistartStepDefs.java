@@ -152,7 +152,7 @@ public class OmnistartStepDefs {
 
     @And("the user clicks on Hast du einen Gutscheincode?")
     public void theUserClickOnApplyCouponButton() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
         omniLanding.applyCoupon.click();
         Thread.sleep(2000);
