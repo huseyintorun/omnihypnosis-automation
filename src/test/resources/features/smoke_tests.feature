@@ -1,6 +1,6 @@
-@smoke
-Feature: Omni Page Smoke Test
 
+Feature: Omni Page Smoke Test
+  @smoke
   Scenario: Check the basic features of the Omni hypnosis website
     Given the user is on the main page
     Then the URL of the website should be correct
@@ -9,9 +9,10 @@ Feature: Omni Page Smoke Test
     Then the AboutOMNI page should be confirmed
     When the user clicks on the OMNI Language toggle to choose German
     Then the language should change to German
-
+  @smoke
   Scenario: Check the availability of order process for Switzerland
     Given the user is on the main page
+
     When the user clicks on the Cookiebot Alle zulassen button
     And the user clicks on the OMNI Language toggle to choose German
     And the user clicks on BEGINNE NOCH HEUTE button
@@ -23,19 +24,19 @@ Feature: Omni Page Smoke Test
     And the user clicks on apply
     Then the user clicks on complete order and verifies if the order is completed
 
-  #Scenario: Check the availability of order process for Germany
-    Given the user is on the main page
-    When the user clicks on the Cookiebot Alle zulassen button
-    And the user clicks on the OMNI Language toggle to choose German
-    And the User choose Deutchland from Hover Over Menu
-    And the user choose Omni Intensive Deutschland
-    And the user clicks on Jetzt Platz in Deutschland sichern
-    And the user fills the form
-    And the user clicks on Hast du einen Gutscheincode?
-    And the user enters the coupon in the placeholder
-    And the user clicks on apply
-    Then the user clicks on complete order and verifies if the order is completed
-
+  Scenario: Check the availability of order process for Germany
+     Given the user is on the main page
+     When the user clicks on the Cookiebot Alle zulassen button
+      And the user clicks on the OMNI Language toggle to choose German
+      And the User choose Deutchland from Hover Over Menu
+      And the user choose Omni Intensive Deutschland
+      And the user clicks on Jetzt Platz in Deutschland sichern
+      And the user fills the form
+      And the user clicks on Hast du einen Gutscheincode?
+      And the user enters the coupon in the placeholder
+      And the user clicks on apply
+      Then the user clicks on complete order and verifies if the order is completed
+  @smoke
   Scenario: Check the availability of order process for the USA
     Given the user is on the main page
     When the user clicks on the Cookiebot Alle zulassen button
@@ -47,7 +48,7 @@ Feature: Omni Page Smoke Test
     And the user enters the coupon in the placeholder
     And the user clicks on apply
     Then the user clicks on complete order and verifies if the order is completed in USA
-
+  @smoke
   Scenario: Check the availability of Hypnokids Certification online
     Given the user is on the main page
     When the user clicks on the Cookiebot Alle zulassen button

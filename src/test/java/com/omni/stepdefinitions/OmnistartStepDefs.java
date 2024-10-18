@@ -234,11 +234,15 @@ public class OmnistartStepDefs {
         Thread.sleep(5000);
         Actions actions = new Actions(Driver.get());
         // Perform tab key presses
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 15; i++) {
             actions.sendKeys(Keys.TAB).build().perform();
             Thread.sleep(100);
         }
-        Thread.sleep(10000);
+
+        Thread.sleep(2000);
+
+        //JavascriptExecutor js = (JavascriptExecutor) Driver.get();
+        //js.executeScript("window.scrollBy(0, 50);");
         // Press Enter key
         //actions.sendKeys(Keys.ENTER).build().perform();
         omniLanding.checkbox.click();
@@ -253,6 +257,7 @@ public class OmnistartStepDefs {
         Thread.sleep(10000);
         //omniLanding.weiter_zur_zahlung.click();
         Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
+        Thread.sleep(3000);
         System.out.println("Page Title: " + Driver.get().getTitle());
 
     }
@@ -458,7 +463,7 @@ public class OmnistartStepDefs {
         Thread.sleep(5000);
         Actions actions = new Actions(Driver.get());
         // Perform tab key presses
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 15; i++) {
             actions.sendKeys(Keys.TAB).build().perform();
             Thread.sleep(100);
         }
@@ -474,10 +479,10 @@ public class OmnistartStepDefs {
         actions.sendKeys(Keys.ENTER).build().perform();
         Thread.sleep(10000);
         actions.sendKeys(Keys.ENTER).build().perform();
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         //omniLanding.weiter_zur_zahlung.click();
-     // Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
-     // System.out.println("Page Title: " + Driver.get().getTitle());
+     Assert.assertTrue(Driver.get().getTitle().contains("Thank You"));
+     System.out.println("Page Title: " + Driver.get().getTitle());
 
 
 

@@ -17,8 +17,9 @@ public class Hooks {
     public void setUp(){
         System.out.println("\tthis is coming from BEFORE");
         Driver.get().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        Driver.get().manage().window().maximize();
+
         Driver.get().manage().window().setSize(new Dimension(1920, 1080));
+        Driver.get().manage().window().maximize();
     }
 
     @After
