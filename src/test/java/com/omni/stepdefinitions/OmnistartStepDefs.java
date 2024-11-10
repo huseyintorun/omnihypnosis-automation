@@ -219,7 +219,7 @@ public class OmnistartStepDefs {
     @Then("the language should change to German")
     public void userCheckThatLanguageChanged() throws InterruptedException {
         Thread.sleep(1000);
-        Assert.assertTrue(Driver.get().getTitle().contains("OMNI: Dein Weg zum zertifizierten Hypnosetherapeuten"));
+        Assert.assertTrue(Driver.get().getTitle().contains("OMNI Hypnosis Academy"));
         System.out.println("Page Title: " + Driver.get().getTitle());
     }
 
@@ -510,5 +510,24 @@ public class OmnistartStepDefs {
 
         Assert.assertTrue(omniLanding.main_menu.isDisplayed());
         System.out.println("Main Menu is displayed");
+    }
+
+    @When("the user clicks on the OMNI Language toggle to choose English")
+    public void theUserClicksOnTheOMNILanguageToggleToChooseEnglish() throws InterruptedException {
+        omniLanding.language_Toggle.click();
+        Thread.sleep(3000);
+    }
+
+    @Then("the language should change to English")
+    public void theLanguageShouldChangeToEnglish() throws InterruptedException {
+        Thread.sleep(1000);
+        Assert.assertTrue(Driver.get().getTitle().contains("OMNI Hypnosis Academy"));
+        System.out.println("Page Title: " + Driver.get().getTitle());
+    }
+
+    @And("the user clicks on START TODAY button")
+    public void theUserClicksOnSTARTTODAYButton() throws InterruptedException {
+        Thread.sleep(3000);
+        omniLanding.start_today.click();
     }
 }

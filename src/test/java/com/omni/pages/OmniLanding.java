@@ -141,6 +141,12 @@ public class OmniLanding extends BasePage{
     @FindBy(xpath = "//h1[normalize-space()='All Products']")
     public WebElement main_menu;
 
+   // //a[@class='button button-primary button--mobile-width-full button___aa68b']
+    @FindBy(xpath = "//a[@class='button button-primary button--mobile-width-full button___aa68b']")
+    public WebElement start_today;
+
+
+
 
 
 
